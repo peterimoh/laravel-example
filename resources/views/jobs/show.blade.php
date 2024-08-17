@@ -9,7 +9,7 @@
         <li><strong>Salary:</strong> {{$job->salary}}</li>
     </ul>
 
-    @can('edit-job', $job)
+    @can('edit', $job)
         <div class="py-3">
             <x-button href="/jobs/{{$job->id}}/edit">Edit</x-button>
         </div>
