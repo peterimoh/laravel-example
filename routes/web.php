@@ -5,7 +5,17 @@ declare(strict_types=1);
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
+use App\Models\Job;
 use Illuminate\Support\Facades\Route;
+
+Route::get('test', function () {
+
+$job = Job::first();
+  TranslateJob::dispatch($job);
+
+    return 'Done';
+});
 
 
 Route::view('/', 'home', [
